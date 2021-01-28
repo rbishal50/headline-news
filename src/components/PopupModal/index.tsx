@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import PropTypes from 'prop-types'
 import { Modal, Button } from 'react-bootstrap'
 
 import { IProps } from './interface'
@@ -32,6 +33,15 @@ export const PopupModal: FC<IProps> = ({
       </Modal>
     </>
   )
+}
+
+PopupModal.propTypes = {
+  isModalShown: PropTypes.bool.isRequired,
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+  imageUrl: PropTypes.string,
+  handleClose: PropTypes.func.isRequired,
 }
 
 export default PopupModal

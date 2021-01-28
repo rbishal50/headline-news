@@ -4,5 +4,5 @@ export interface IProps {
   title: string
   subtitle: string
   content: string
-  imageUrl: string
+  imageUrl?: string
 }

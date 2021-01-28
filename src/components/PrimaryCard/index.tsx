@@ -17,7 +17,7 @@ export const PrimaryCard: FC<IProps> = ({
 }) => (
   <Card className={`primary-card ${type === 'normal' ? 'column' : 'row-reverse'}`} onClick={clicked}>
     <div>
-      <Card.Img src={imageUrl} alt='Cover image' />
+      <Card.Img src={imageUrl} alt='Cover' />
     </div>
     <div>
       <Card.Body>

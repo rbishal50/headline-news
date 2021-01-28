@@ -24,7 +24,7 @@ function checkStatus(response: Response) {
 }
 
 export async function request(url: string, options?: RequestInit): Promise<any | { err: ResponseError }> {
-  const fetchResponse = await fetch(url, options)
+  const fetchResponse = await fetch(`${process.env.REACT_APP_API_BASE_URL}${url}`, options)
   const response = checkStatus(fetchResponse)
   return parseJSON(response)
 }

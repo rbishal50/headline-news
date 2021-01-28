@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-
-// import { AppThunk } from '../store'
+import { getHeadlines } from '../api/newsApi'
+import { AppThunk } from '../store'
 
 interface IState {
   headlines: []
@@ -35,3 +35,13 @@ const news = createSlice({
 
 export const { getHeadlinesStart, getHeadlinesSuccess, getHeadlinesFailure } = news.actions
 export default news.reducer
+
+export const fetchHeadlines = (): AppThunk => async (dispatch) => {
+  try {
+    dispatch(getHeadlinesStart())
+    const data = await getHeadlines()
+    dispatch(getHeadlinesSuccess(data))
+  } catch (err) {
+    dispatch(getHeadlinesFailure(err))
+  }
+}

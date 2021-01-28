@@ -1,24 +1,16 @@
-import { useEffect } from 'react'
-import { useSelector, useDispatch, shallowEqual } from 'react-redux'
+import { Switch, Route } from 'react-router-dom'
 
-import { RootState } from './redux/rootReducer'
-import { fetchHeadlines } from './redux/slices/newsSlice'
+import Wrapper from './components/Wrapper'
+import Home from './pages/Home'
 
 function App() {
-  const dispatch = useDispatch()
-
-  const { headlines } = useSelector((state: RootState) => {
-    return {
-      headlines: state.news.headlines,
-      isLoading: state.news.isLoading,
-    }
-  }, shallowEqual)
-
-  useEffect(() => {
-    dispatch(fetchHeadlines())
-  }, [dispatch])
-
-  return <div className='App'>{(headlines || []).map((headline: any) => headline.title)}</div>
+  return (
+    <Wrapper>
+      <Switch>
+        <Route path='/' exact component={Home} />
+      </Switch>
+    </Wrapper>
+  )
 }
 
 export default App

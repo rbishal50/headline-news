@@ -5,9 +5,7 @@ import rootReducer, { RootState } from './rootReducer'
 
 const store = configureStore({
   reducer: rootReducer,
-  middleware: getDefaultMiddleware({
-    serializableCheck: false,
-  }),
+  middleware: getDefaultMiddleware({}),
 })
 
 if (process.env.NODE_ENV === 'development' && module.hot) {

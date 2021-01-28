@@ -62,15 +62,7 @@ export const HeadlineNews: FC = () => {
     <>
       {isLoading && <Loader />}
       <Row>
-        <Col md='9'>
-          <Row>
-            {!isLoading &&
-              (headlines.slice(0, 3) || []).map((headline: any, index) => handleCardDisplay(index, headline))}
-          </Row>
-        </Col>
-        <Col md='3'>
-          <ListItems items={headlines} />
-        </Col>
+        {!isLoading && (headlines.slice(0, 3) || []).map((headline: any, index) => handleCardDisplay(index, headline))}
       </Row>
     </>
   )

@@ -5,7 +5,7 @@
     flex-direction: column;
   }
   .flex-row-reverse {
-    flex-direction: column;
+    flex-direction: row-reverse;
   }
   .subtitle {
     white-space: nowrap;
@@ -26,5 +26,11 @@
     .card-title {
       color: #f44336 !important;
     }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .flex-row-reverse {
+    flex-direction: column !important;
   }
 }

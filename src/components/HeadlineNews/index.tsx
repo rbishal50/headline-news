@@ -4,6 +4,7 @@ import { useSelector, useDispatch, shallowEqual } from 'react-redux'
 
 import { RootState } from '../../redux/rootReducer'
 import { fetchHeadlines } from '../../redux/slices/newsSlice'
+import ListItems from '../ListItems'
 import PrimaryCard from '../PrimaryCard'
 import Loader from '../Spinner'
 
@@ -33,6 +34,7 @@ export const HeadlineNews: FC = () => {
             type='imageToTheRight'
             content={data.description}
             subtitle={data.content}
+            imageUrl={data.urlToImage}
           />
         </Col>
       )
@@ -48,7 +50,9 @@ export const HeadlineNews: FC = () => {
             content={index === 1 ? data.description : ''}
             subtitle={data.content}
             size={index === 1 ? 'lg' : 'sm'}
+            imageUrl={data.urlToImage}
           />
+          {index > 1 && <ListItems items={headlines.slice(0, 3)} />}
         </Col>
       )
     }
@@ -59,7 +63,13 @@ export const HeadlineNews: FC = () => {
       {isLoading && <Loader />}
       <Row>
         <Col md='9'>
-          <Row>{!isLoading && (headlines || []).map((headline: any, index) => handleCardDisplay(index, headline))}</Row>
+          <Row>
+            {!isLoading &&
+              (headlines.slice(0, 3) || []).map((headline: any, index) => handleCardDisplay(index, headline))}
+          </Row>
+        </Col>
+        <Col md='3'>
+          <ListItems items={headlines} />
         </Col>
       </Row>
     </>

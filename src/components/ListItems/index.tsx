@@ -10,7 +10,7 @@ export const ListItems: FC<IProps> = ({ items = [] }) => {
     <ListGroup variant='flush' className='list-items'>
       {items.map(({ id, title, subtitle }) => (
         <ListGroup.Item key={id}>
-          {title} <p className='text-muted mb-0'>{subtitle}</p>
+          <span className='title'>{title}</span> <p className='text-muted mb-0'>{subtitle}</p>
         </ListGroup.Item>
       ))}
     </ListGroup>

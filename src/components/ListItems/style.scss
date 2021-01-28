@@ -1,3 +1,9 @@
 .list-items {
   cursor: pointer;
+  .title {
+    transition: 0.5s ease;
+    &:hover {
+      color: #f44336;
+    }
+  }
 }

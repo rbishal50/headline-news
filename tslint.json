@@ -1,0 +1,21 @@
+{
+  "extends": ["tslint:recommended", "tslint-config-prettier", "tslint-react-hooks", "tslint-config-standard"],
+  "linterOptions": {
+    "exclude": ["node_modules", "public", "build", "scripts"]
+  },
+  "rules": {
+    "trailing-comma": [
+      true,
+      {
+        "multiline": "always",
+        "singleline": "never"
+      }
+    ],
+    "no-console": [true, "log", "error"],
+
+    "ordered-imports": false,
+    "object-literal-sort-keys": false,
+    "space-before-function-paren": false,
+    "react-hooks-nesting": "error"
+  }
+}

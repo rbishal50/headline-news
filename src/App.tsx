@@ -1,18 +1,17 @@
-import logo from './logo.svg'
-import './App.css'
+import './App.scss'
+import PrimaryCard from './components/PrimaryCard'
 
 function App() {
   return (
     <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a className='App-link' href='https://reactjs.org' target='_blank' rel='noopener noreferrer'>
-          Learn React
-        </a>
-      </header>
+      <PrimaryCard
+        clicked={() => {
+          // do sth
+        }}
+        title='aaa'
+        subtitle='bbb'
+        content='Change the underlying component CSS base class name and modifier class names prefix. This is an escape hatch for working with heavily customized bootstrap css.'
+      />
     </div>
   )
 }

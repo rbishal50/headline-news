@@ -1,0 +1,9 @@
+.primary-card {
+  cursor: pointer;
+  .flex-column {
+    flex-direction: column;
+  }
+  .flex-row-reverse {
+    flex-direction: column;
+  }
+}

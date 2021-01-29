@@ -1,4 +1,12 @@
-export const mapper = (data: any) => {
+export interface INews {
+  id: string
+  title: string
+  subtitle: string
+  content: string
+  imageUrl: string
+}
+
+export const mapper = (data: any, items: number = 10) => {
   return data
     .map((el: any, index: number) => ({
       id: `${index + 1}-${el.title}`,
@@ -7,5 +15,5 @@ export const mapper = (data: any) => {
       content: el.content,
       imageUrl: el.image,
     }))
-    .slice(0, 10)
+    .slice(0, items)
 }

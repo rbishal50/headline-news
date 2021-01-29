@@ -10,8 +10,16 @@ interface IProps {
   clicked: (data: any) => void
 }
 
+export interface INews {
+  id: string
+  title: string
+  subtitle: string
+  content: string
+  imageUrl: string
+}
+
 export const HeadlineNews: FC<IProps> = ({ clicked }) => {
-  const [highLightedNews, setHighLightedNews] = useState({})
+  const [highLightedNews, setHighLightedNews] = useState<INews>()
   const dispatch = useDispatch()
 
   const { featured } = useSelector((state: RootState) => {
@@ -30,7 +38,20 @@ export const HeadlineNews: FC<IProps> = ({ clicked }) => {
     }
   }, [featured])
 
-  return <>{<ListItems items={featured} clicked={clicked} />}</>
+  return (
+    <>
+      {highLightedNews && (
+        <PrimaryCard
+          title={highLightedNews.title}
+          clicked={clicked}
+          subtitle={highLightedNews.subtitle}
+          imageUrl={highLightedNews.imageUrl}
+          size='sm'
+        />
+      )}
+      <ListItems items={featured} clicked={clicked} />
+    </>
+  )
 }
 
 export default HeadlineNews

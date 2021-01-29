@@ -22,7 +22,7 @@ export async function getFeatured(): Promise<[]> {
     const { articles } = await request(url, {
       method: 'GET',
     })
-    const data = mapper(articles)
+    const data = mapper(articles, 6)
     return data
   } catch (err) {
     throw err

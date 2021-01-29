@@ -16,7 +16,10 @@ export const PrimaryCard: FC<IProps> = ({
   imageUrl = DEFAULT_IMAGE,
   clicked,
 }) => (
-  <Card className={`primary-card mb-4 ${type === 'normal' ? 'flex-column' : 'flex-row-reverse'}`} onClick={clicked}>
+  <Card
+    className={`primary-card mb-4 ${type === 'normal' ? 'flex-column' : 'flex-row-reverse'}`}
+    onClick={() => clicked({ title, subtitle, content, imageUrl })}
+  >
     <div>
       <Card.Img className='cover' src={imageUrl} alt='Cover' />
     </div>

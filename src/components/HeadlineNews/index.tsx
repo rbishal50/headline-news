@@ -8,7 +8,11 @@ import ListItems from '../ListItems'
 import PrimaryCard from '../PrimaryCard'
 import Loader from '../Spinner'
 
-export const HeadlineNews: FC = () => {
+interface IProps {
+  clicked: (data: any) => void
+}
+
+export const HeadlineNews: FC<IProps> = ({ clicked }) => {
   const dispatch = useDispatch()
 
   const { headlines, isLoading } = useSelector((state: RootState) => {
@@ -28,9 +32,7 @@ export const HeadlineNews: FC = () => {
         <Col md='12'>
           <PrimaryCard
             title={data.title}
-            clicked={() => {
-              // do sth
-            }}
+            clicked={clicked}
             type='imageToTheRight'
             content={data.description}
             subtitle={data.content}
@@ -43,16 +45,14 @@ export const HeadlineNews: FC = () => {
         <Col md={index === 1 ? '8' : '4'}>
           <PrimaryCard
             title={data.title}
-            clicked={() => {
-              // do sth
-            }}
+            clicked={clicked}
             type='normal'
             content={index === 1 ? data.description : ''}
             subtitle={data.content}
             size={index === 1 ? 'lg' : 'sm'}
             imageUrl={data.urlToImage}
           />
-          {index > 1 && <ListItems items={headlines.slice(0, 3)} />}
+          {index > 1 && <ListItems items={headlines.slice(0, 3)} clicked={clicked} />}
         </Col>
       )
     }

@@ -19,11 +19,11 @@ export const PopupModal: FC<IProps> = ({
       <Modal show={isModalShown} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>{title}</Modal.Title>
-          <p className='text-muted'>{subtitle}</p>
         </Modal.Header>
         <Modal.Body>
-          <img src={imageUrl} alt='Cover' />
-          {content}
+          <p className='text-muted'>{subtitle}</p>
+          <img src={imageUrl} alt='Cover' style={{ width: '100%' }} />
+          <div className='mt-2'>{content}</div>
         </Modal.Body>
         <Modal.Footer>
           <Button variant='secondary' onClick={handleClose}>
@@ -39,7 +39,7 @@ PopupModal.propTypes = {
   isModalShown: PropTypes.bool.isRequired,
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
-  content: PropTypes.string.isRequired,
+  content: PropTypes.node.isRequired,
   imageUrl: PropTypes.string,
   handleClose: PropTypes.func.isRequired,
 }

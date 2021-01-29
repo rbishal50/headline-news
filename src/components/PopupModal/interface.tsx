@@ -3,6 +3,6 @@ export interface IProps {
   handleClose: () => void
   title: string
   subtitle: string
-  content: string
+  content: any
   imageUrl?: string
 }

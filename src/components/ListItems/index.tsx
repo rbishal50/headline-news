@@ -5,11 +5,11 @@ import { ListGroup } from 'react-bootstrap'
 import { IProps } from './interface'
 import './style.scss'
 
-export const ListItems: FC<IProps> = ({ items = [] }) => {
+export const ListItems: FC<IProps> = ({ items = [], clicked }) => {
   return (
     <ListGroup variant='flush' className='list-items'>
       {items.map(({ id, title, subtitle }) => (
-        <ListGroup.Item key={id}>
+        <ListGroup.Item key={id} onClick={() => clicked({ title, subtitle })}>
           <span className='title'>{title}</span> <p className='text-muted mb-0'>{subtitle}</p>
         </ListGroup.Item>
       ))}

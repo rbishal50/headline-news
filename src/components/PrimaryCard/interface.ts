@@ -5,5 +5,5 @@ export interface IProps {
   subtitle?: string
   content?: string
   imageUrl?: string
-  clicked: () => void
+  clicked: (data: any) => void
 }

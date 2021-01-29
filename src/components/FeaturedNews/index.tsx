@@ -6,7 +6,11 @@ import { fetchHeadlines } from '../../redux/slices/newsSlice'
 import ListItems from '../ListItems'
 import PrimaryCard from '../PrimaryCard'
 
-export const HeadlineNews: FC = () => {
+interface IProps {
+  clicked: (data: any) => void
+}
+
+export const HeadlineNews: FC<IProps> = ({ clicked }) => {
   const dispatch = useDispatch()
 
   const { headlines } = useSelector((state: RootState) => {
@@ -19,7 +23,7 @@ export const HeadlineNews: FC = () => {
     dispatch(fetchHeadlines())
   }, [dispatch])
 
-  return <>{<ListItems items={headlines} />}</>
+  return <>{<ListItems items={headlines} clicked={clicked} />}</>
 }
 
 export default HeadlineNews

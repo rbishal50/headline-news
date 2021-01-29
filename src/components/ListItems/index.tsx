@@ -10,7 +10,7 @@ export const ListItems: FC<IProps> = ({ items = [], clicked }) => {
     <ListGroup variant='flush' className='list-items'>
       {items.map(({ id, title, subtitle, content, imageUrl }) => (
         <ListGroup.Item key={id} onClick={() => clicked({ id, title, subtitle, content, imageUrl })}>
-          <span className='title'>{title}</span> <p className='text-muted mb-0'>{subtitle}</p>
+          <span className='title'>{title}</span> <p className='text-muted mb-0 subtitle'>{subtitle}</p>
         </ListGroup.Item>
       ))}
     </ListGroup>

@@ -3,7 +3,7 @@ export const mapper = (data: any) => {
     .map((el: any, index: number) => ({
       id: `${index + 1}-${el.title}`,
       title: el.title,
-      subtitle: el.subtitle,
+      subtitle: el.content,
       content: el.description,
       source: el.source?.id,
       imageUrl: el.urlToImage,

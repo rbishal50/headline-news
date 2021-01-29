@@ -6,4 +6,9 @@
       color: #f44336;
     }
   }
+  .subtitle {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }

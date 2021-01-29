@@ -13,10 +13,11 @@ import { IProps } from './interface'
 export const HeadlineNews: FC<IProps> = ({ clicked }) => {
   const dispatch = useDispatch()
 
-  const { headlines, isLoading } = useSelector((state: RootState) => {
+  const { headlines, isLoading, error } = useSelector((state: RootState) => {
     return {
       headlines: state.news.headlines,
       isLoading: state.news.isLoading,
+      error: state.news.error,
     }
   }, shallowEqual)
 
@@ -59,6 +60,7 @@ export const HeadlineNews: FC<IProps> = ({ clicked }) => {
   return (
     <>
       {isLoading && <Loader />}
+      {error && error}
       <Row>
         {!isLoading &&
           (headlines.slice(0, 3) || []).map((headline: any, index: number) => handleCardDisplay(index, headline))}

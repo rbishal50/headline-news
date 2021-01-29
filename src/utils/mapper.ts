@@ -1,11 +1,3 @@
-export interface INews {
-  id: string
-  title: string
-  subtitle: string
-  content: string
-  imageUrl: string
-}
-
 export const mapper = (data: any, items: number = 10) => {
   return data
     .map((el: any, index: number) => ({

@@ -58,7 +58,10 @@ export const fetchHeadlines = (): AppThunk => async (dispatch) => {
     const data = await getHeadlines()
     dispatch(getHeadlinesSuccess(data))
   } catch (err) {
-    dispatch(getHeadlinesFailure(err))
+    let errorMessage = 'Unable to get the News!'
+    const error = await err.response.json()
+    if (error?.errors?.length) errorMessage = error.errors[0]
+    dispatch(getHeadlinesFailure(errorMessage))
   }
 }
 
@@ -68,6 +71,9 @@ export const fetchFeatured = (): AppThunk => async (dispatch) => {
     const data = await getFeatured()
     dispatch(getFeaturedSuccess(data))
   } catch (err) {
-    dispatch(getFeaturedFailure(err))
+    let errorMessage = 'Unable to get the News!'
+    const error = await err.response.json()
+    if (error?.errors?.length) errorMessage = error.errors[0]
+    dispatch(getFeaturedFailure(errorMessage))
   }
 }

@@ -1,4 +1,5 @@
 import { FC, useEffect } from 'react'
+import PropTypes from 'prop-types'
 import { Row, Col } from 'react-bootstrap'
 import { useSelector, useDispatch, shallowEqual } from 'react-redux'
 
@@ -7,10 +8,7 @@ import { fetchHeadlines } from '../../redux/slices/newsSlice'
 import ListItems from '../ListItems'
 import PrimaryCard from '../PrimaryCard'
 import Loader from '../Spinner'
-
-interface IProps {
-  clicked: (data: any) => void
-}
+import { IProps } from './interface'
 
 export const HeadlineNews: FC<IProps> = ({ clicked }) => {
   const dispatch = useDispatch()
@@ -67,6 +65,10 @@ export const HeadlineNews: FC<IProps> = ({ clicked }) => {
       </Row>
     </>
   )
+}
+
+HeadlineNews.propTypes = {
+  clicked: PropTypes.func.isRequired,
 }
 
 export default HeadlineNews

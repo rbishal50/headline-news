@@ -1,24 +1,14 @@
 import { FC, useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
 import { useSelector, useDispatch, shallowEqual } from 'react-redux'
 
 import { RootState } from '../../redux/rootReducer'
 import { fetchFeatured } from '../../redux/slices/newsSlice'
 import ListItems from '../ListItems'
 import PrimaryCard from '../PrimaryCard'
+import { IProps, INews } from './interface'
 
-interface IProps {
-  clicked: (data: any) => void
-}
-
-export interface INews {
-  id: string
-  title: string
-  subtitle: string
-  content: string
-  imageUrl: string
-}
-
-export const HeadlineNews: FC<IProps> = ({ clicked }) => {
+export const FeaturedNews: FC<IProps> = ({ clicked }) => {
   const [highLightedNews, setHighLightedNews] = useState<INews>()
   const dispatch = useDispatch()
 
@@ -54,4 +44,8 @@ export const HeadlineNews: FC<IProps> = ({ clicked }) => {
   )
 }
 
-export default HeadlineNews
+FeaturedNews.propTypes = {
+  clicked: PropTypes.func.isRequired,
+}
+
+export default FeaturedNews

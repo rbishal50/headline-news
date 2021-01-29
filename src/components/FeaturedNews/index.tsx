@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { useSelector, useDispatch, shallowEqual } from 'react-redux'
 
 import { RootState } from '../../redux/rootReducer'
@@ -11,6 +11,7 @@ interface IProps {
 }
 
 export const HeadlineNews: FC<IProps> = ({ clicked }) => {
+  const [highLightedNews, setHighLightedNews] = useState({})
   const dispatch = useDispatch()
 
   const { featured } = useSelector((state: RootState) => {
@@ -22,6 +23,12 @@ export const HeadlineNews: FC<IProps> = ({ clicked }) => {
   useEffect(() => {
     dispatch(fetchFeatured())
   }, [dispatch])
+
+  useEffect(() => {
+    if (featured.length) {
+      setHighLightedNews(featured[0])
+    }
+  }, [featured])
 
   return <>{<ListItems items={featured} clicked={clicked} />}</>
 }

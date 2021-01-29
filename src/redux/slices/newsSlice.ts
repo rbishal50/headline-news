@@ -1,13 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+
 import { getHeadlines, getFeatured } from '../api/newsApi'
 import { AppThunk } from '../store'
-
-interface IState {
-  headlines: []
-  featured: []
-  isLoading: boolean
-  error: string | null
-}
+import { IState } from './interface'
 
 const initialState = {
   headlines: [],

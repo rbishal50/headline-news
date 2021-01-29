@@ -5,7 +5,6 @@ export const mapper = (data: any) => {
       title: el.title,
       subtitle: el.description,
       content: el.content,
-      source: el.source?.id,
       imageUrl: el.image,
     }))
     .slice(0, 10)

@@ -29,30 +29,30 @@ export const HeadlineNews: FC<IProps> = ({ clicked }) => {
   const handleCardDisplay = (index: number, data: any) => {
     if (index === 0) {
       return (
-        <Col md='12'>
+        <Col md='12' key={data.id}>
           <PrimaryCard
             title={data.title}
             clicked={clicked}
             type='imageToTheRight'
-            content={data.description}
-            subtitle={data.content}
-            imageUrl={data.urlToImage}
+            content={data.content}
+            subtitle={data.subtitle}
+            imageUrl={data.imageUrl}
           />
         </Col>
       )
     } else {
       return (
-        <Col md={index === 1 ? '8' : '4'}>
+        <Col md={index === 1 ? '8' : '4'} key={index}>
           <PrimaryCard
-            title={data.title}
+            title={data.id}
             clicked={clicked}
             type='normal'
-            content={index === 1 ? data.description : ''}
-            subtitle={data.content}
+            content={index === 1 ? data.content : ''}
+            subtitle={data.subtitle}
             size={index === 1 ? 'lg' : 'sm'}
-            imageUrl={data.urlToImage}
+            imageUrl={data.imageUrl}
           />
-          {index > 1 && <ListItems items={headlines.slice(0, 3)} clicked={clicked} />}
+          {index > 1 && <ListItems items={headlines.slice(3, 6)} clicked={clicked} />}
         </Col>
       )
     }

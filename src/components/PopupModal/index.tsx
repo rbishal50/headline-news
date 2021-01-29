@@ -9,14 +9,14 @@ const DEFAULT_IMAGE = 'https://picsum.photos/500/300'
 export const PopupModal: FC<IProps> = ({
   isModalShown,
   handleClose,
-  title,
-  subtitle,
+  title = '',
+  subtitle = '',
   content,
   imageUrl = DEFAULT_IMAGE,
 }) => {
   return (
     <>
-      <Modal show={isModalShown} onHide={handleClose}>
+      <Modal show={isModalShown} onHide={handleClose} size='lg'>
         <Modal.Header closeButton>
           <Modal.Title>{title}</Modal.Title>
         </Modal.Header>

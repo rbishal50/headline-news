@@ -7,4 +7,6 @@ export interface IItem {
   id: string
   title: string
   subtitle: string
+  imageUrl: string
+  content: string
 }

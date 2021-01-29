@@ -8,8 +8,8 @@ import './style.scss'
 export const ListItems: FC<IProps> = ({ items = [], clicked }) => {
   return (
     <ListGroup variant='flush' className='list-items'>
-      {items.map(({ id, title, subtitle }) => (
-        <ListGroup.Item key={id} onClick={() => clicked({ title, subtitle })}>
+      {items.map(({ id, title, subtitle, content, imageUrl }) => (
+        <ListGroup.Item key={id} onClick={() => clicked({ id, title, subtitle, content, imageUrl })}>
           <span className='title'>{title}</span> <p className='text-muted mb-0'>{subtitle}</p>
         </ListGroup.Item>
       ))}

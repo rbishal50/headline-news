@@ -2,7 +2,7 @@ import { FC, useEffect } from 'react'
 import { useSelector, useDispatch, shallowEqual } from 'react-redux'
 
 import { RootState } from '../../redux/rootReducer'
-import { fetchHeadlines } from '../../redux/slices/newsSlice'
+import { fetchFeatured } from '../../redux/slices/newsSlice'
 import ListItems from '../ListItems'
 import PrimaryCard from '../PrimaryCard'
 
@@ -13,17 +13,17 @@ interface IProps {
 export const HeadlineNews: FC<IProps> = ({ clicked }) => {
   const dispatch = useDispatch()
 
-  const { headlines } = useSelector((state: RootState) => {
+  const { featured } = useSelector((state: RootState) => {
     return {
-      headlines: state.news.headlines,
+      featured: state.news.featured,
     }
   }, shallowEqual)
 
   useEffect(() => {
-    dispatch(fetchHeadlines())
+    dispatch(fetchFeatured())
   }, [dispatch])
 
-  return <>{<ListItems items={headlines} clicked={clicked} />}</>
+  return <>{<ListItems items={featured} clicked={clicked} />}</>
 }
 
 export default HeadlineNews

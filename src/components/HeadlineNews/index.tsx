@@ -59,8 +59,12 @@ export const HeadlineNews: FC<IProps> = ({ clicked }) => {
 
   return (
     <>
-      {isLoading && <Loader />}
-      {error && error}
+      {isLoading && (
+        <div data-testid='loader'>
+          <Loader />
+        </div>
+      )}
+      {error && <p data-testid='error'>{error}</p>}
       <Row>
         {!isLoading &&
           (headlines.slice(0, 3) || []).map((headline: any, index: number) => handleCardDisplay(index, headline))}

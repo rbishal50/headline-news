@@ -1,0 +1,160 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HeadlineNews /> renders a spinner when loading is true 1`] = `
+<div>
+  <div
+    class="loader"
+  >
+    <div
+      class="spinner-grow text-danger"
+    />
+  </div>
+  <div
+    class="row"
+  />
+</div>
+`;
+
+exports[`<HeadlineNews /> renders items 1`] = `
+<div>
+  <div
+    class="row"
+  >
+    <div
+      class="col-md-12"
+    >
+      <div
+        class="primary-card mb-4 flex-row-reverse card"
+        data-testid="card"
+      >
+        <div>
+          <img
+            alt="Cover"
+            class="card-img cover"
+            src="https://picsum.photos/500/300"
+          />
+        </div>
+        <div>
+          <div
+            class="card-body"
+            style="max-width: 500px;"
+          >
+            <div
+              class="card-title card-title h5"
+              style="font-size: 30px;"
+            >
+              test title 1
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="col-md-8"
+    >
+      <div
+        class="primary-card mb-4 flex-column card"
+        data-testid="card"
+      >
+        <div>
+          <img
+            alt="Cover"
+            class="card-img cover"
+            src="https://picsum.photos/500/300"
+          />
+        </div>
+        <div>
+          <div
+            class="card-body"
+            style="max-width: 500px;"
+          >
+            <div
+              class="card-title card-title h5"
+              style="font-size: 30px;"
+            >
+              22
+            </div>
+            <p
+              class="text-muted subtitle"
+            >
+              subtitle 2
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<HeadlineNews /> renders items 2`] = `
+<div>
+  <div
+    class="row"
+  >
+    <div
+      class="col-md-12"
+    >
+      <div
+        class="primary-card mb-4 flex-row-reverse card"
+        data-testid="card"
+      >
+        <div>
+          <img
+            alt="Cover"
+            class="card-img cover"
+            src="https://picsum.photos/500/300"
+          />
+        </div>
+        <div>
+          <div
+            class="card-body"
+            style="max-width: 500px;"
+          >
+            <div
+              class="card-title card-title h5"
+              style="font-size: 30px;"
+            >
+              test title 1
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="col-md-8"
+    >
+      <div
+        class="primary-card mb-4 flex-column card"
+        data-testid="card"
+      >
+        <div>
+          <img
+            alt="Cover"
+            class="card-img cover"
+            src="https://picsum.photos/500/300"
+          />
+        </div>
+        <div>
+          <div
+            class="card-body"
+            style="max-width: 500px;"
+          >
+            <div
+              class="card-title card-title h5"
+              style="font-size: 30px;"
+            >
+              22
+            </div>
+            <p
+              class="text-muted subtitle"
+            >
+              subtitle 2
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

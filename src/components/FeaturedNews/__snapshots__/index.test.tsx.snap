@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FeaturedNews /> renders items 1`] = `
+<div>
+  <div
+    class="primary-card mb-4 flex-column card"
+    data-testid="card"
+  >
+    <div>
+      <img
+        alt="Cover"
+        class="card-img cover"
+        src="https://picsum.photos/500/300"
+      />
+    </div>
+    <div>
+      <div
+        class="card-body"
+        style="max-width: 500px;"
+      >
+        <div
+          class="card-title card-title h5"
+          style="font-size: 20px;"
+        >
+          test title 1
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="list-items list-group list-group-flush"
+  >
+    <div
+      class="list-group-item"
+    >
+      <span
+        class="title"
+      >
+        test title 1
+      </span>
+       
+      <p
+        class="text-muted mb-0 subtitle"
+      />
+    </div>
+    <div
+      class="list-group-item"
+    >
+      <span
+        class="title"
+      >
+        test title 2
+      </span>
+       
+      <p
+        class="text-muted mb-0 subtitle"
+      >
+        subtitle 2
+      </p>
+    </div>
+  </div>
+</div>
+`;

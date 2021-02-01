@@ -1,6 +1,6 @@
 export interface IProps {
-  items: IItem[]
-  clicked: (data: any) => void
+  items?: IItem[]
+  clicked?: (data: any) => void
 }
 
 export interface IItem {

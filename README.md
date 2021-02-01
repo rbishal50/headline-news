@@ -46,10 +46,12 @@ For eg: **process.env.REACT_APP_API_BASE_URL**
 
 In the project directory, you can run: <br/>
 
-| Commands       | Description                                                                   |
-| -------------- | ----------------------------------------------------------------------------- |
-| `yarn`         | Installs required dependencies for the project. This is same as yarn install. |
-| `yarn run dev` | Runs the app in the development mode.<br />                                   |
-| `yarn build`   | Builds the app for production to the `build` folder.                          |
+| Commands                                   | Description                                                                   |
+| ------------------------------------------ | ----------------------------------------------------------------------------- |
+| `yarn`                                     | Installs required dependencies for the project. This is same as yarn install. |
+| `yarn run dev`                             | Runs the app in the development mode.<br />                                   |
+| `yarn build`                               | Builds the app for production to the `build` folder.                          |
+| `yarn test`                                | Runs the tests                                                                |
+| `yarn test -- --coverage --watchAll=false` | Runs the tests                                                                |
 
 > You can refer to `scripts` section of `package.json` file for more commands. <br/>
